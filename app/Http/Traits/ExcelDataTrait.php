@@ -2,6 +2,8 @@
 
 namespace App\Http\Traits;
 
+use Carbon\Carbon;
+
 trait ExcelDataTrait
 {
 
@@ -35,6 +37,18 @@ trait ExcelDataTrait
 
         $this->sheet->setCellValue('R16', $this->data['gerceklesenBasinc']);
         $this->sheet->getStyle('R16')->getFont()->setSize(18);
+
+        $this->sheet->setCellValue('AM7', $this->data['agirlik']);
+        $this->sheet->getStyle('AM7')->getFont()->setSize(18);
+
+        $this->sheet->setCellValue('H8', $this->data['hammadde']);
+        $this->sheet->getStyle('H8')->getFont()->setSize(18);
+
+        $this->sheet->setCellValue('AZ7', Carbon::now()->format('Y-m-d'));
+        $this->sheet->getStyle('AZ7')->getFont()->setSize(18);
+
+        $this->sheet->setCellValue('AZ8', Carbon::now()->format('H:i'));
+        $this->sheet->getStyle('AZ8')->getFont()->setSize(18);
 
     }
     public function siraliYolluklariAyarla(): void

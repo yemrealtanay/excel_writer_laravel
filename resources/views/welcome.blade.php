@@ -101,6 +101,14 @@
                 <label for="cycleTime" class="form-label">Cycle Time</label>
                 <input type="text" class="form-control" id="cycleTime" name="cycleTime" placeholder="Süre Girin">
             </div>
+            <div class="col-md-6 mt-3">
+                <label for="agirlik" class="form-label">Ağırlık</label>
+                <input type="text" class="form-control" id="agirlik" name="agirlik" placeholder="Ağırlık Girin">
+            </div>
+            <div class="col-md-6 mt-3">
+                <label for="hammadde" class="form-label">Hammadde</label>
+                <input type="text" class="form-control" id="hammadde" name="hammadde" placeholder="Hammadde Adı/Kodu">
+            </div>
         </div>
 
         <div class="row mb-3">
