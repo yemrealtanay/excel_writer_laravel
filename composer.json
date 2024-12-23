@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.6",
         "league/flysystem-aws-s3-v3": "^3.0",
+        "nunomaduro/collision": "^8.5",
         "phpoffice/phpspreadsheet": "^3.6"
     },
     "require-dev": {
