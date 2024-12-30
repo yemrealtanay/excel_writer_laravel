@@ -47,7 +47,7 @@ trait ExcelDataTrait
         $this->sheet->setCellValue('AZ7', Carbon::now()->format('Y-m-d'));
         $this->sheet->getStyle('AZ7')->getFont()->setSize(18);
 
-        $this->sheet->setCellValue('AZ8', Carbon::now()->format('H:i'));
+        $this->sheet->setCellValue('AZ8', Carbon::now()->addHours(3)->format('H:i'));
         $this->sheet->getStyle('AZ8')->getFont()->setSize(18);
 
     }
