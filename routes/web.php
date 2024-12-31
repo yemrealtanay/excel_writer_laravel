@@ -7,8 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['scheme' => 'https'], function () {
-    Route::get('/test', [ExcelController::class, 'getTest'])->name('test');
-    Route::post('/download', [ExcelController::class, 'create'])->name('excel_form');
-});
+Route::get('/test', [ExcelController::class, 'getTest'])->name('test');
+Route::post('/download', [ExcelController::class, 'create'])->name('excel_form');
 
