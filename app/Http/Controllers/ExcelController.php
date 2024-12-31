@@ -15,6 +15,11 @@ class ExcelController extends Controller
     public $sheet;
     public array $data;
 
+    public function getTest()
+    {
+        $sourceFilePath = storage_path('app/public/parametre.xlsx');
+        return response()->download($sourceFilePath);
+    }
     public function create(Request $request)
     {
         $this->data = $request->all();
