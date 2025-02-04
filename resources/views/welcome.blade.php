@@ -74,7 +74,7 @@
                 <hr>
         </div>
     </div>
-    <form id="parametreForm" method="POST" action="https://plastivops.com" class="container my-4">
+    <form id="parametreForm" method="POST" action="https://www.plastivops.com" class="container my-4">
         @csrf
         <h1 class="text-center mb-4">Parametre Takip Formu</h2>
 
