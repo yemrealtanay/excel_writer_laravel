@@ -17,7 +17,7 @@ class ExcelController extends Controller
 
     public function getTest()
     {
-        $sourceFilePath = 'excel/parametre.xlsx';
+        $sourceFilePath = '/excel/parametre.xlsx';
 
         if (!Storage::disk('public')->exists($sourceFilePath)) {
             return response()->json(['error' => 'Dosya bulunamadı'], 404);
@@ -29,11 +29,12 @@ class ExcelController extends Controller
     }
     public function create(Request $request)
     {
-        $this->data = $request->all();
-        $excel_file_name = $this->data['urunAdi'] . Carbon::now()->format('YmdHis') . '.xlsx';
+        $excel_file_name = '/excel/' . $this->data['urunAdi'] . Carbon::now()->format('YmdHis') . '.xlsx';
 
-        $sourceFilePath = 'parametre.xlsx';
+        $sourceFilePath = '/excel/parametre.xlsx';
         $copyFilePath = $excel_file_name;
+
+        dd($excel_file_name);
 
         if (!Storage::disk('public')->exists($sourceFilePath)) {
             return response()->json(['error' => 'Kaynak dosya bulunamadı'], 404);
@@ -41,6 +42,8 @@ class ExcelController extends Controller
 
         // Dosyayı kopyala
         Storage::disk('public')->copy($sourceFilePath, $copyFilePath);
+
+        die();
 
         $fullCopyPath = Storage::disk('public')->path($copyFilePath);
         $spreadsheet = IOFactory::load($fullCopyPath);
